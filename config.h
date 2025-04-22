@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* "workspace" tagging */
-static const char *tags[] = { "", "", "", "", "󰝰", "󰭹", "" };
+static const char *tags[] = { "", "", "", "", "󰝰", "󰭹", "" };
 
 /* 1 is home (with chimney)
  * 2 is web browser
