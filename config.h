@@ -19,16 +19,17 @@ static const char *colors[][3]      = {
 };
 
 /* "workspace" tagging */
-static const char *tags[] = { "", "", "", "", "󰝰", "󰭹", "󰊴" };
+static const char *tags[] = { "", "", "", "", "󰝰", "󰭹", "" };
 
 /* 1 is home (with chimney)
  * 2 is web browser
- * 3 is terminal
- * 4 is music player
+ * 3 is terminal emulator
+ * 4 is general programs
  * 5 is file manager
- * 6 is for messaging
- * 7 is gaming 
+ * 6 is for chat programs
+ * 7 is general programs 2
 */
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -112,9 +113,11 @@ static const Key keys[] = {
 	/* end of window manager keybinds */
 
 
-	/* start of custom keybinds */ 
-	{ 0, XK_Print, spawn, SHCMD("maim -s /home/jim/screenshots/SS-$(date +%Y%m%d-%H%M%S).png && notify-send 'saved - ~/screenshots'") },
-	/* end of custom keybinds */
+        /* start of custom keybinds */
+        { 0, XK_Print, spawn, SHCMD("maim -s /home/jim/screenshots/SS-$(date +%Y%m%d-%H%M%S).png && notify-send 'saved - ~/screenshots'") },
+        { MODKEY|ShiftMask, XK_t, spawn, SHCMD("icecat") },
+        { MODKEY|ShiftMask, XK_f, spawn, SHCMD("pcmanfm") },
+        /* end of custom keybinds */
 };
 
 /* button definitions */
